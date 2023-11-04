@@ -18,6 +18,9 @@ constructor()
         width:50,
         height:50,
     };
+
+    this.isDead=false;
+    this.acceleration=0.2;
 }
 
 draw()
@@ -26,5 +29,18 @@ draw()
     c.fillStyle="red";
     c.fillRect(this.position.x,this.position.y,this.size.width,this.size.height);
 }
+
+move()
+{
+    this.velocity.y+=this.acceleration;
+    this.position.y+=this.velocity.y;
+}
+
+update()
+{
+    this.draw();
+    this.move();
+}
+
 
 }
