@@ -21,14 +21,26 @@ constructor()
 
     this.isDead=false;
     this.acceleration=0.2;
+
+    this.birdimage =new Image();
+    this.birdimage.src= "./Bird.png";
 }
 
 draw()
 {
     c.beginPath();
-    c.fillStyle="red";
-    c.fillRect(this.position.x,this.position.y,this.size.width,this.size.height);
+    c.drawImage(this.birdimage,this.position.x-this.size.width/2,this.position.y,this.size.width,this.size.height);
 }
+borderCollision() {
+    if (this.position.y + this.size.width >= canvas.height) {
+      this.position.y = canvas.height - this.size.width;
+      this.isDead = true;
+    }
+  }
+
+  jump() {
+    this.velocity.y = -2;
+  }
 
 move()
 {
@@ -39,7 +51,10 @@ move()
 update()
 {
     this.draw();
-    this.move();
+    if (!this.isDead) {
+        this.move();
+        this.borderCollision();
+      }
 }
 
 
