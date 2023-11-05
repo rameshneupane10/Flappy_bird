@@ -8,6 +8,7 @@ const pipe = new Pipe();
 const bg = new BackGround(0, 0);
 const bg2 = new BackGround(bg.size.width, 0);
 
+alert("Controls : Press SPACE for jump ");
 
 function animate()
 {
