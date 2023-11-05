@@ -29,7 +29,7 @@ constructor()
 draw()
 {
     c.beginPath();
-    c.drawImage(this.birdimage,this.position.x-this.size.width/2,this.position.y,this.size.width,this.size.height);
+    c.drawImage(this.birdimage,this.position.x - this.size.width / 2,this.position.y,this.size.width,this.size.height);
 }
 borderCollision() {
     if (this.position.y + this.size.width >= canvas.height) {
@@ -56,6 +56,4 @@ update()
         this.borderCollision();
       }
 }
-
-
 }

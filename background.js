@@ -17,7 +17,7 @@ class BackGround{
         y:0,
     };
     this.img = new Image();
-    this.img.src = "./bg.png";
+    this.img.src ="./bg.png";
 }
 
 draw()

@@ -4,7 +4,7 @@ class Pipe
     {
         this.position={
             x: canvas.width,
-            y:Math.random()*(0- -350)+ -350,
+            y:Math.random()*(0- -250)+ -250,
         };
 
         this.size={
@@ -24,7 +24,6 @@ class Pipe
     }
 
 
-
     drawup()
     {
         c.beginPath();
@@ -34,7 +33,7 @@ class Pipe
     drawdown()
     {
         c.beginPath()
-        c.drawImage(this.dowm,this.position.x,this.position.y +this.size.height +250,this.size.width,this.size.height);
+        c.drawImage(this.down,this.position.x,this.position.y +this.size.height +150,this.size.width,this.size.height);
     }
 
     collision() 
@@ -57,9 +56,9 @@ class Pipe
             bird.position.x - bird.size.width / 2 &&
           this.position.x <=
             bird.position.x - bird.size.width / 2 + bird.size.width &&
-          this.position.y + this.size.height + 250 + this.size.height >=
+          this.position.y + this.size.height + 150 + this.size.height >=
             bird.position.y &&
-          this.position.y + this.size.height + 250 <=
+          this.position.y + this.size.height + 150 <=
             bird.position.y + bird.size.height
         ) {
           bird.isDead = true;
@@ -71,7 +70,7 @@ class Pipe
         if(this.position.x+this.size.width<=0)
         {
             this.position.x=canvas.width;
-            this.position.y=Math.random()*(0- -350)+ -350;
+            this.position.y=Math.random()*(0- -250)+ -250;
         }
         this.position.x+=this.velocity.x;   
       }
